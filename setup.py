@@ -13,6 +13,7 @@ setup(
     author_email='biuro@serwersms.pl',
     url='http://serwersms.pl',
     packages=['serwersms'],
+    platforms=["all"],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
