@@ -1,7 +1,9 @@
 # SerwerSMS.pl Python Client API
 Klient Python do komunikacji zdalnej z API v2 SerwerSMS.pl
 
-Zalecane jest, aby komunikacja przez HTTPS API odbywała się z loginów utworzonych specjalnie do połączenia przez API. Konto użytkownika API można utworzyć w Panelu Klienta → Ustawienia interfejsów → HTTPS XML API → Użytkownicy.
+Uwaga. Aktualna wersja działa w oparciu o token API. 
+
+W celu autoryzacji za pośrednictwem Tokenu API, należy wygenerować go po stronie Panelu Klienta w menu Ustawienia interfejsów → HTTPS API → Tokeny API. Format nagłówka autoryzacyjnego jest zgodny z formatem Bearer token.
 
 #### Przykładowe wywołanie
 ```python
@@ -9,7 +11,7 @@ import sys
 import json
 import serwersms
 
-api = serwersms.SerwerSMS('login', 'haslo')
+api = serwersms.SerwerSMS('token')
 
 try:
 
@@ -35,7 +37,7 @@ except Exception:
 
 #### Wysyłka SMS
 ```python
-api = serwersms.SerwerSMS('login', 'haslo')
+api = serwersms.SerwerSMS('token')
 
 try:
 
@@ -54,7 +56,7 @@ except Exception:
 
 #### Wysyłka spersonalizowanych SMS
 ```python
-api = serwersms.SerwerSMS('login', 'haslo')
+api = serwersms.SerwerSMS('token')
 
 try:
 
@@ -89,7 +91,7 @@ except Exception:
 
 #### Pobieranie raportów doręczeń
 ```python
-api = serwersms.SerwerSMS('login', 'haslo')
+api = serwersms.SerwerSMS('token')
 
 try:
 
@@ -108,7 +110,7 @@ except Exception:
 
 #### Pobieranie wiadomości przychodzących
 ```python
-api = serwersms.SerwerSMS('login', 'haslo')
+api = serwersms.SerwerSMS('token')
 
 try:
 
